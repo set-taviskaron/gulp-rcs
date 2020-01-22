@@ -1,11 +1,79 @@
 {
-  "name": "gulp-rcs",
-  "version": "2.0.0",
-  "description": "Minify all CSS selectors. The gulp plugin for rcs-core",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha"
+  "_args": [
+    [
+      {
+        "raw": "gulp-rcs",
+        "scope": null,
+        "escapedName": "gulp-rcs",
+        "name": "gulp-rcs",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/set/ownCloud/RABOTA/OZ/freeporn99.com"
+    ]
+  ],
+  "_from": "gulp-rcs@latest",
+  "_id": "gulp-rcs@1.1.0",
+  "_inCache": true,
+  "_location": "/gulp-rcs",
+  "_nodeVersion": "6.10.3",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/gulp-rcs-1.1.0.tgz_1495708583244_0.048188582295551896"
   },
+  "_npmUser": {
+    "name": "jpeer",
+    "email": "janpeer264@gmail.com"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "gulp-rcs",
+    "scope": null,
+    "escapedName": "gulp-rcs",
+    "name": "gulp-rcs",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/gulp-rcs/-/gulp-rcs-1.1.0.tgz",
+  "_shasum": "3dec0648b9728ca150a0bc86e097d5ef1334d059",
+  "_shrinkwrap": null,
+  "_spec": "gulp-rcs",
+  "_where": "/Users/set/ownCloud/RABOTA/OZ/freeporn99.com",
+  "author": {
+    "name": "Jan Peer Stöcklmair",
+    "email": "janpeer264@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/JPeer264/gulp-rcs/issues"
+  },
+  "dependencies": {
+    "array-includes": "^3.0.2",
+    "gulp-match": "^1.0.3",
+    "gulp-util": "^3.0.7",
+    "json-extra": "^0.5.0",
+    "lodash.merge": "^4.6.0",
+    "rcs-core": "^0.9.0",
+    "through2": "^2.0.3"
+  },
+  "description": "Minify all CSS selectors. The gulp plugin for rcs-core",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "fs-extra": "^1.0.0",
+    "mocha": "^3.2.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "3dec0648b9728ca150a0bc86e097d5ef1334d059",
+    "tarball": "https://registry.npmjs.org/gulp-rcs/-/gulp-rcs-1.1.0.tgz"
+  },
+  "gitHead": "f7a4f9dcc26567a799767a7ec7d27a3c7703234a",
+  "homepage": "https://github.com/JPeer264/gulp-rcs#readme",
   "keywords": [
     "gulpplugin",
     "gulp",
@@ -23,29 +91,23 @@
     "reduce",
     "downsize"
   ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "jpeer",
+      "email": "janpeer264@gmail.com"
+    }
+  ],
+  "name": "gulp-rcs",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JPeer264/gulp-rcs.git"
   },
-  "author": "Jan Peer Stöcklmair <janpeer264@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/JPeer264/gulp-rcs/issues"
+  "scripts": {
+    "test": "mocha"
   },
-  "homepage": "https://github.com/JPeer264/gulp-rcs#readme",
-  "dependencies": {
-    "array-includes": "^3.0.2",
-    "gulp-match": "^1.0.3",
-    "gulp-util": "^3.0.7",
-    "html-minifier": "^3.5.21",
-    "json-extra": "^0.5.0",
-    "lodash.merge": "^4.6.0",
-    "rcs-core": "^2.4.1",
-    "through2": "^2.0.3"
-  },
-  "devDependencies": {
-    "chai": "^3.5.0",
-    "fs-extra": "^1.0.0",
-    "mocha": "^3.2.0"
-  }
+  "version": "1.1.0"
 }

@@ -11,13 +11,9 @@ const includes = require('array-includes');
 
 const rcsExport = options => {
     const optionsDefault = {
-        js: ['.js', '.jsx'],
         css: ['.css', '.sass', '.scss'],
-        html: ['.html', '.html'],
-        pug: ['.pug', '.jade'],
         mappingOrigValues: true,
-        replaceKeyframes: false,
-        ignoreAttributeSelectors: false,
+        replaceKeyframes: false
     };
 
     options = options || {};
@@ -30,7 +26,7 @@ const rcsExport = options => {
     return through.obj(function (file, enc, cb) {
         let data;
         let newFile;
-        let replaceFunction = rcs.replace.any;
+        let replaceFunction = rcs.replace.buffer;
 
         if (file.isNull()) {
             return cb(null, file);
@@ -48,27 +44,7 @@ const rcsExport = options => {
         rcs.selectorLibrary.setExclude(options.exclude);
 
         if (includes(options.css, path.extname(file.relative))) {
-            rcs.fillLibraries(file.contents.toString(), {
-                replaceKeyframes: options.replaceKeyframes,
-                prefix: options.prefix,
-                suffix: options.suffix,
-                ignoreAttributeSelectors: options.ignoreAttributeSelectors,
-                preventRandomName: options.preventRandomName,
-            })
-
-            replaceFunction = rcs.replace.css;
-        }
-
-        if (includes(options.html, path.extname(file.relative))) {
-            replaceFunction = rcs.replace.html;
-        }
-
-        if (includes(options.pug, path.extname(file.relative))) {
-            replaceFunction = rcs.replace.pug;
-        }
-
-        if (includes(options.js, path.extname(file.relative))) {
-            replaceFunction = rcs.replace.js;
+            replaceFunction = rcs.replace.bufferCss;
         }
 
         // if file is excluded
@@ -79,9 +55,14 @@ const rcsExport = options => {
         }
 
         // calling the replace function from rcs-core
-        data = replaceFunction(file.contents.toString());
+        data = replaceFunction(file.contents, {
+            replaceKeyframes: options.replaceKeyframes,
+            prefix: options.prefix,
+            suffix: options.suffix,
+            preventRandomName: options.preventRandomName,
+        });
 
-        file.contents = new Buffer(data);
+        file.contents = data;
 
         this.push(file);
 
@@ -112,7 +93,7 @@ const rcsExport = options => {
             return;
         }
 
-        rcs.selectorLibrary.setMultiple(selectors);
+        rcs.selectorLibrary.setValues(selectors);
     } // /loadMapping
 
     function includeConfig(pathString) {
